@@ -1,0 +1,7 @@
+# App files and folders
+/.gitignore
+/.nyc_output
+/.travis.yml
+/coverage
+/src
+/test

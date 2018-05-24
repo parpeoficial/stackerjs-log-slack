@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '9'
+  - '8'
+cache:
+  directories:
+    - ~/.npm
+
+notifications:
+  email: false
+
+before_install:
+  - npm install -g babel-cli istanbul
+
+after_success:
+  - npm run build
+  - npm run travis-deploy-once "npm run semantic-release"
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
